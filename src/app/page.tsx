@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 // Components
 import Navbar from "@/components/Navbar";
@@ -57,7 +58,7 @@ export default function Home () {
     return (
         <main>
             <Navbar />
-            <section className="px-5 py-36">
+            <section className="px-5 py-32">
                 {/* <div className="max-w-2xl mx-auto mb-28">
                     <div className="bg-zinc-800 text-sm text-zinc-100 font-medium py-4 px-5 rounded border border-zinc-600 shadow-destructive/25 shadow-lg">
                         <span className="flex items-center">
@@ -68,6 +69,14 @@ export default function Home () {
                         </span>
                     </div>
                 </div> */}
+                <Image 
+                    src="https://pbs.twimg.com/profile_images/1240860415271161856/sZWDgYZz_400x400.jpg"
+                    //src="https://scontent-iad3-2.xx.fbcdn.net/v/t39.30808-6/271593824_101060199141396_680848477478789790_n.png?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=8hMCKyBeVxYAX-EWzeo&_nc_ht=scontent-iad3-2.xx&oh=00_AfC2ZZnYl9Diadbn7vBWdyy5AbncIFGGYlzggK_zbzrpXg&oe=6497019B"
+                    alt="Game"
+                    width={125}
+                    height={125}
+                    className="mx-auto rounded-full mb-20"
+                />
                 <h1 className="text-zinc-100 text-5xl text-center font-bold mb-12">The #1 platform for browsing games</h1>
                 <p className="text-zinc-300 text-xl text-center leading-relaxed mb-12">For over 2 years we have been providing the gaming community with the best browsing<br className="hidden lg:block" /> experience. Find new games to play with friends or just hangout and have fun, the choice is yours!</p>
                 <div className="flex items-center justify-center space-x-4">
