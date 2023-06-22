@@ -20,8 +20,8 @@ import { BsDiscord } from "react-icons/bs";
 
 export default function Navbar () {
     return (
-        <div className="pt-5 px-5">
-            <nav className="py-5 px-8 bg-zinc-900 w-full rounded">
+        <div>
+            <nav className="py-5 px-8 bg-zinc-900 w-full">
                 <div className="flex items-center justify-between">
                     <NavigationMenu>
                         <Image 
