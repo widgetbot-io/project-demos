@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useEffect } from "react";
+import { signIn } from "next-auth/react";
+import { useSession } from "next-auth/react";
 // Components
 import Navbar from "@/components/Navbar";
-import TabsCard from "@/components/core/TabsCard";
 import Container from "@/components/Container";
 import { Button } from "@/components/common/Button";
 // Icons
@@ -11,24 +14,29 @@ import { BsDiscord } from "react-icons/bs";
 import { SiNextdotjs } from "react-icons/si";
 import { IoGameController } from "react-icons/io5";
 
-export default function Home () {
+export default async function Home () {    
+    const { data: session, status } = useSession();
+
     return (
         <main>
             <Navbar />
             <section className="px-5 py-44">
-                {/* <Image 
-                    src="https://pbs.twimg.com/profile_images/1240860415271161856/sZWDgYZz_400x400.jpg"
-                    alt="Game"
-                    width={100}
-                    height={100}
-                    className="mx-auto rounded-full mb-20"
-                /> */}
                 <h1 className="text-zinc-100 text-6xl text-center font-bold mb-12 tracking-tighter">The #1 platform for browsing games</h1>
                 <p className="text-zinc-300 text-xl text-center leading-relaxed mb-12 tracking-wide">For over 2 years we have been providing the gaming community with the best browsing<br className="hidden lg:block" /> experience. Find new games to play with friends or just hangout and have fun, the choice is yours!</p>
                 <div className="flex items-center justify-center space-x-4">
-                    <Button size="lg" variant="discord">
-                        <BsDiscord className="me-2" /> Get started
-                    </Button>
+                    {status === "authenticated" ? (
+                        <Link href="/profile">
+                            <Button size="lg" variant="destructive">
+                                View Profile
+                            </Button>
+                        </Link>                          
+                    ) : (
+                        <Link href="/login">
+                            <Button size="lg" variant="discord">
+                                <BsDiscord className="me-2" /> Get started
+                            </Button>
+                        </Link>
+                    )}
                     <Button size="lg" variant="secondary">
                         Browse games
                     </Button>  
