@@ -11,7 +11,7 @@ export default function Home() {
       <Common.Header />
       <Common.Stream>
         <Common.Video>
-          <iframe
+          {/* <iframe
             width="100%"
             height="100%"
             src="https://youtube.com/embed/jfKfPfyJRdk"
@@ -19,7 +19,16 @@ export default function Home() {
             allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             frameBorder={0}
-          />
+          /> */}
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/MPOTkmW6j4s"
+            title="Microsoft Is Making Its Own CPUs…Maybe"
+            frameBorder={0}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </Common.Video>
         <Common.Chat>
           <WidgetBot
@@ -30,6 +39,7 @@ export default function Home() {
           />
         </Common.Chat>
       </Common.Stream>
+      <Common.Timeline />
     </Common.Container>
   );
 }

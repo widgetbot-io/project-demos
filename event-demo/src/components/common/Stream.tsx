@@ -2,7 +2,7 @@ import { styled, theme } from "@/stitches";
 
 export const Video = styled("div", {
   flexGrow: 4,
-  minHeight: "75vh",
+  minHeight: "80vh",
 });
 
 export const Chat = styled("div", {
