@@ -1,4 +1,4 @@
-import { styled, theme } from "@/stitches";
+import { styled, theme } from "@stitches";
 import { Container } from "./Container";
 
 const Logo = styled("div", {
@@ -22,14 +22,14 @@ const Items = styled("div", {
   flexGrow: "1",
   display: "inline",
   justifyContent: "flex-end",
-  marginLeft: "1.5rem",
+  marginLeft: "2vh",
   borderLeft: "1px solid #5865f2",
   "& a": {
     color: "#f2f2f2",
     fontSize: "1.2rem",
     position: "relative",
     textDecoration: "none",
-    marginLeft: "1.5rem"
+    marginLeft: "2vh"
   }
 });
 
@@ -37,7 +37,8 @@ const TopNav = styled("div", {
   overflow: "hidden",
   backgroundColor: "#333",
   lineHeight: "2.5rem",
-  padding: ".7rem 1.5rem",
+  padding: "1vh",
+  margin: "1vh",
   boxSizing: "border-box",
   borderBottom: "1px solid #5865f2",
 
@@ -64,3 +65,4 @@ export function Header() {
     </Container>
   );
 }
+

@@ -1,4 +1,4 @@
-import { styled, theme } from "@/stitches";
+import { styled, theme } from "@stitches";
 
 export const Container = styled("div", {
   margin: "0 auto",
