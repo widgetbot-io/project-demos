@@ -66,7 +66,7 @@ const Handle = styled("a", {
   fontWeight: "bold"
 });
 
-export function Controls() {
+export function Controls({ username }: { username: string }) {
   return (
     <Container>
       <ControlsContainer>
@@ -78,9 +78,12 @@ export function Controls() {
         </Button>
         <Avatar src="man1.jpg" />
         <Avatar src="girl1.webp" />
-        Welcome to the event!
-        <Handle href="https://twitter.com">@john</Handle>
-        <Handle href="https://twitter.com">@sarah</Handle>
+        <span>
+          Welcome to the event, {username}!
+          Currently speaking:{' '}
+          <Handle href="https://twitter.com">@john</Handle>,{' '}
+          <Handle href="https://twitter.com">@sarah</Handle>
+        </span>
       </ControlsContainer>
       <LinksContainer>
         <Link href="https://widgetbot.io">Share</Link>

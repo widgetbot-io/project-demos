@@ -5,7 +5,6 @@ export const Container = styled("div", {
   variants: {
     color: {
       primary: {
-        backgroundColor: theme.colors.bgPrimary,
         color: theme.colors.textPrimary
       },
       secondary: {
