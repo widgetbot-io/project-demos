@@ -6,11 +6,14 @@ import { Header } from "@/components/Header";
 import { Container } from "@/components/Container";
 import { Video, Chat, Stream } from "@/components/Stream";
 import { Controls } from "@/components/Controls";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Login, LoginTitle } from "@/components/Login";
 
 export default function Home() {
   const [username, setUsername] = useState('');
+  const [client, setClient] = useState(false)
+
+  useEffect(() => setClient(true), [])
   
   const onAPI = (api: WidgetBot['api']) => {
     api.on("signIn", user => {
@@ -47,14 +50,14 @@ export default function Home() {
             />}
         </Video>
         <Chat>
-          <WidgetBot
+          {client && <WidgetBot
             width="100%"
             height="100%"
             server="299881420891881473"
             channel="355719584830980096"
             shard="https://emerald.widgetbot.io"
             onAPI={onAPI}
-          />
+          />}
         </Chat>
       </Stream>
       {username && <Controls username={username} />}
