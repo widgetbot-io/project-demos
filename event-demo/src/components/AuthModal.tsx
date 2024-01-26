@@ -73,7 +73,7 @@ export const AuthModal: React.FC<A> = ({token, auth}) => {
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}
                         type={"text"} 
-                        spellcheck={false}
+                        spellCheck={false}
                     />
                     <Submit
                         onClick={() => auth(value)}
