@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply antialiased;
+    @apply bg-top bg-no-repeat bg-neutral-900 bg-hero;
+    @apply text-white;
+    @apply min-h-screen;
+}
