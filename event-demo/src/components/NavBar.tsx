@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from "next/link";
 import { useStoreActions, useStoreState } from '@/store/hooks';
+import AuthModal from "@/components/AuthModal";
 
 function UserInfo() {
   const user = useStoreState(state => state.auth.user)!;
@@ -19,25 +20,14 @@ function UserInfo() {
   )
 }
 
-function Login() {
-  const login = useStoreActions(state => state.auth.login);
-
-
-  return (
-    <button onClick={() => login('mason')}>
-      Login
-    </button>
-  )
-}
-
 export default function NavBar() {
   const user = useStoreState(state => state.auth.user);
 
   return (
-    <nav className="p-4 flex justify-between">
+    <nav className="p-4 flex justify-between items-center">
       <div className="flex gap-x-4 items-center">
         <Link className="flex gap-x-2 items-center" href="/">
-          <Image src="widgetbot.svg" alt="WidgetBot Logo" width={48} height={48} />
+          <Image src="img/widgetbot.svg" alt="WidgetBot Logo" width={48} height={48} />
 
           <h2 className="text-xl">WidgetBot</h2>
         </Link>
@@ -53,7 +43,7 @@ export default function NavBar() {
         </Link>
       </div>
 
-      {user ? <UserInfo /> : <Login />}
+      {user ? <UserInfo /> : <AuthModal />}
     </nav>
   );
 }

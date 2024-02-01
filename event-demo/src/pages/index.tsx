@@ -10,11 +10,10 @@ export default function Home() {
 
   const token = useStoreState(state => state.auth.token);
 
-
   return (
     <BaseLayout>
       <div className="flex gap-x-4 min-h-[93vh] mx-4">
-        <div className="w-3/4">
+        <div className={`transition-all ${token ? 'w-3/4' : 'w-full'}`}>
           <iframe
             className="rounded-lg"
             width="100%"
@@ -27,8 +26,9 @@ export default function Home() {
           />
         </div>
 
-        <div className="w-1/4 rounded-lg ">
-          {isClient && <WidgetBot
+        {isClient && token && (
+          <div className="w-1/4 rounded-lg">
+           <WidgetBot
               width="100%"
               height="100%"
               server="299881420891881473"
@@ -36,8 +36,8 @@ export default function Home() {
               shard="https://emerald.widgetbot.io"
               token={token}
           />
-          }
-        </div>
+         </div>
+        )}
       </div>
     </BaseLayout>
   );

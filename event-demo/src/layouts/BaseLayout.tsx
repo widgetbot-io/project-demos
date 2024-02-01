@@ -1,8 +1,8 @@
+import React from 'react';
 import { Inter } from 'next/font/google';
 import Head from 'next/head';
 
 import NavBar from '@/components/NavBar';
-import React from "react";
 
 const inter = Inter({ subsets: ['latin'] });
 
