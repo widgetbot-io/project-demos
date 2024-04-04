@@ -10,7 +10,7 @@ type ChatState = {
 };
 
 export const useChatStore = create<ChatState>()((set) => ({
-  enabled: false,
+  enabled: true,
   toggle: () => set((state) => ({ enabled: !state.enabled })),
 }));
 

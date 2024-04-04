@@ -7,12 +7,7 @@ import { twMerge as tw } from "tailwind-merge";
 
 import { useChatStore } from "@/_components/ToggleChat";
 
-const members = [
-  "You",
-  "WidgetBot Developer",
-  "WidgetBot Emerald",
-  "+ 3 others",
-];
+const members = ["WidgetBot", "WidgetBot Emerald", "WidgetBot Developer"];
 
 const WidgetBot = dynamic(
   () => {
@@ -29,20 +24,30 @@ export default function HomePage() {
         {members.map((member, i) => (
           <div
             className={tw(
-              "flex h-full w-full items-center justify-center rounded bg-neutral-800 transition",
+              "relative h-full w-full flex-col items-center justify-center rounded bg-neutral-800 p-1 transition",
             )}
             key={i}
           >
-            {member}
+            <p className="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded bg-neutral-800 opacity-0 transition duration-300 hover:opacity-100">
+              {member}
+            </p>
             <iframe
               width={"100%"}
               height="100%"
-              src="https://www.youtube.com/embed/6avJHaC3C2U?si=o_Rn3C4dOhUZHiXS&amp;controls=0"
+              className="rounded"
+              src="https://www.youtube.com/embed/6avJHaC3C2U?si=o_Rn3C4dOhUZHiXS&amp;controls=0&mute=1&autoplay=1"
               title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
+              allow="accelerometer; autoplay; muted; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            />
           </div>
         ))}
+        <div
+          className={tw(
+            "flex h-full w-full items-center justify-center rounded bg-neutral-800 transition",
+          )}
+        >
+          + 3 others participants
+        </div>
       </div>
       <div
         className={tw(
