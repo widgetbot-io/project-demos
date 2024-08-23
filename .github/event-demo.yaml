@@ -1,0 +1,26 @@
+name: 'Build And Push Event Demo'
+
+on:
+  push:
+    paths:
+      - 'event-demo/**'
+
+
+jobs:
+  docker:
+    name: Build and Publish
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: 'true'
+          token: ${{ secrets.PAT }}
+
+      - name: Docker login
+        run: echo ${{ secrets.PAT }} | docker login ghcr.io --username yomanz --password-stdin
+
+      - name: Docker build
+        run: docker build -t ghcr.io/widgetbot-io/demos:event-demo .
+
+      - name: Docker push tag latest
+        run: docker push ghcr.io/widgetbot-io/embed:event-demo
