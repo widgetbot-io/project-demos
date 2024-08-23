@@ -1,6 +1,9 @@
 # Use an official Node.js runtime as a parent image
 FROM node:18-alpine
 
+# Label the image
+LABEL org.opencontainers.image.source=https://github.com/widgetbot-io/project-demos
+
 # Install pnpm globally
 RUN npm install -g pnpm
 
