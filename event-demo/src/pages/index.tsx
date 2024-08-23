@@ -38,7 +38,7 @@ export default function Home() {
                 height="100%"
                 server="299881420891881473"
                 channel="355719584830980096"
-                shard="https://emerald.widgetbot.io"
+                shard="https://e-demo.widgetbot.co"
                 token={token}
               />
             </div>

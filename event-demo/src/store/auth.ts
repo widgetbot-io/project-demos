@@ -32,7 +32,7 @@ const auth: AuthStore = {
     state.token = jsonwebtoken.sign({
       id: payload.name,
       username: payload.name,
-      avatar: `http://localhost:3000/${payload.avatarUrl}`
+      avatar: `${window.location.origin}/${payload.avatarUrl}`
     }, SECRET);
   }),
 
