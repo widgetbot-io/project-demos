@@ -22,4 +22,4 @@ jobs:
         run: docker build -t ghcr.io/widgetbot-io/demos:event-demo event-demo
 
       - name: Docker push tag latest
-        run: docker push ghcr.io/widgetbot-io/embed:event-demo
+        run: docker push ghcr.io/widgetbot-io/demos:event-demo
