@@ -26,4 +26,4 @@ RUN pnpm run build
 EXPOSE 3000
 
 # Start the Next.js app
-CMD ["pnpm", "run", "start"]
+CMD ["npx", "serve@latest", "out"]
