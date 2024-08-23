@@ -3,6 +3,7 @@ name: 'Build And Push Event Demo'
 on:
   push:
     paths:
+      - '.github/workflows/event-demo.yaml'
       - 'event-demo/**'
 
 jobs:
