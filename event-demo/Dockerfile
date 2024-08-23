@@ -7,10 +7,8 @@ RUN npm install -g pnpm
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json (or yarn.lock) to the working directory
-COPY package*.json ./
-
-RUN ls
+# Copy all contents to working dir
+COPY . .
 
 # Install dependencies
 RUN pnpm install --frozen-lockfile
